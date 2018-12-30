@@ -11,10 +11,6 @@ const MoveSchema = new Schema({
     type: Schema.Types.Boolean,
     default: true,
   },
-  winner_move: {
-    type: Schema.Types.Boolean,
-    default: false,
-  },
   field: {
     type: Schema.Types.Number,
     required: [true, 'The field marked is required'],
