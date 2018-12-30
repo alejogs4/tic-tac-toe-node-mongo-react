@@ -21,4 +21,4 @@ const MoveSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Move', MoveSchema);
+module.exports = MoveSchema;
