@@ -16,7 +16,10 @@ const GameSchema = new Schema({
     type: Schema.Types.String,
     default: null,
   },
-  game_date: Date,
+  turn_player_one: {
+    type: Schema.Types.Boolean,
+    default: true,
+  },
   moves: [Move],
 });
 

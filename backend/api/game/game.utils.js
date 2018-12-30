@@ -10,7 +10,9 @@ const gameWinCombinations = [
   [2, 4, 6]
 ];
 // Verify if the move is valid, with reference to the current game
-const isValidMove = (game, newMove) => game.moves.every(move => move.field !== newMove.field);
+const isValidMove = (game, newMove) => {
+  return game.moves.every(move => move.field !== newMove.field) && game.turn_player_one === newMove.player_one
+}
 // Verify is with the current move the player win
 const isAWinnerMove = (combination, playerMoves) => combination.every(move => playerMoves.includes(move));
 

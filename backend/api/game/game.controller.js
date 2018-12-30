@@ -68,13 +68,14 @@ function createGameMove(req, res) {
   return Game.findById(gameId)
     .then((game) => {
       if (game.finish || !isValidMove(game, moveInfo)) {
-        return res.status(SERVER_ERROR).send({ message: 'It´s an invalid move' });
+        throw new Error('I´ts an invalid move')
       }
       return game;
     })
     .then((game) => {
       const newGameData = game;
       newGameData.moves = newGameData.moves.concat([moveInfo]);
+      newGameData.turn_player_one = !newGameData.turn_player_one;
 
       const possibleWinner = getPossibleWinner(newGameData);
       // If one winner was detected update the game data
