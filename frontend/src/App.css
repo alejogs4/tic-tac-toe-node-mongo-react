@@ -7,3 +7,43 @@
 }
 
 .title { text-align: center; }
+
+.header {
+  margin-bottom: 1em;
+}
+
+.game-data span { 
+  font-weight: bold;
+  color: black;
+}
+.table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.game-field {
+  border: 1px solid black;
+  height: 5em;
+  text-align: center;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.player-1 { color: tomato; }
+.player-2 { color: #1a237e; }
+
+.winner {
+  text-align: center;
+  font-size: 2em;
+  color: #1a237e;
+}
+
+.button {
+  text-align: center;
+  display: block;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
