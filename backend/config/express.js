@@ -1,6 +1,9 @@
 module.exports = {
-  access: {
-
+  access: (req, res, next) => {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
   },
   port: process.env.PORT || 3001
 }

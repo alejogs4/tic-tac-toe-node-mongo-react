@@ -13,3 +13,9 @@ test('Return game by id', () => {
     .get('http://localhost:3001/api/v1/game/5c292b84354d373494fa4b6b')
     .expect(200);
 });
+
+test('Return games', () => {
+  request(app)
+    .get('http://localhost:3001/api/v1/games')
+    .expect(200);
+})

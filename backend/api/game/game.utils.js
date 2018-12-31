@@ -20,7 +20,7 @@ const isAWinnerMove = (combination, playerMoves) => combination.every(move => pl
 const getPossibleWinner = (game) => {
   const movesPlayerOne = game.moves.filter(move => move.player_one).map(move => move.field);
   const movesPlayerTwo = game.moves.filter(move => !move.player_one).map(move => move.field);
-
+  // Review every combination searching one winner
   for(let combination of gameWinCombinations) {
     if (isAWinnerMove(combination, movesPlayerOne)) return { winner: 'Player one' };
     if (isAWinnerMove(combination, movesPlayerTwo)) return { winner: 'Player two' };

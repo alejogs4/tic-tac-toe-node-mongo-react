@@ -1,8 +1,10 @@
 const mongoose = require('../../database/connection');
-const Move = require('../move/move.model');
+const Move = require('./move.model');
 
 const { Schema } = mongoose;
-
+/**
+ * Game schema includes moves for can restart game
+ */
 const GameSchema = new Schema({
   _id: {
     type: Schema.Types.ObjectId,

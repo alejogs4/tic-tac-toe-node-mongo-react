@@ -67,6 +67,7 @@ function createGameMove(req, res) {
 
   return Game.findById(gameId)
     .then((game) => {
+      // If the game finish or the field is already marked the move is invalid
       if (game.finish || !isValidMove(game, moveInfo)) {
         throw new Error('I´ts an invalid move')
       }
@@ -74,6 +75,7 @@ function createGameMove(req, res) {
     })
     .then((game) => {
       const newGameData = game;
+      // Update game data
       newGameData.moves = newGameData.moves.concat([moveInfo]);
       newGameData.turn_player_one = !newGameData.turn_player_one;
 
@@ -81,6 +83,11 @@ function createGameMove(req, res) {
       // If one winner was detected update the game data
       if (possibleWinner) {
         newGameData.winner = possibleWinner.winner;
+        newGameData.finish = true;
+      }
+      // If every
+      if (newGameData.moves.length === 9 && !newGameData.finish) {
+        newGameData.winner = 'Empate';
         newGameData.finish = true;
       }
 
