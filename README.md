@@ -16,7 +16,7 @@
   
 ### **2. BackEnd**:
   
-   * To run the application using CLI, you can execute the following commands using yarn:
+  * To run the application using CLI, you can execute the following commands using yarn:
     - yarn
     - yarn start
   * To run the application using CLI, you can execute the following commands using npm:
